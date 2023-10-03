@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AnimalNursery.Infrastructure.Base;
+using System;
 using System.Windows;
 using System.Windows.Threading;
 
@@ -9,7 +10,10 @@ namespace AnimalNursery
         [Obsolete]
         private void Application_Startup(object sender, StartupEventArgs e)
         {
-
+            if (InstanceChecker.TakeMemory())
+            {
+                
+            }
         }
         private void Application_DispatcherUnhandledException(object sender,
             DispatcherUnhandledExceptionEventArgs e)
