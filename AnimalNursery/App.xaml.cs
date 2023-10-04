@@ -1,4 +1,5 @@
 ﻿using AnimalNursery.Infrastructure.Base;
+using AnimalNursery.Views;
 using System;
 using System.Windows;
 using System.Windows.Threading;
@@ -12,7 +13,8 @@ namespace AnimalNursery
         {
             if (InstanceChecker.TakeMemory())
             {
-                
+                var nurseryViews = new NurseryViews();
+                nurseryViews.Show();
             }
         }
         private void Application_DispatcherUnhandledException(object sender,

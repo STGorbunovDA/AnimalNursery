@@ -2,13 +2,13 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     
     <!--#region Style Button-->
-    <Style x:Key="menuButtonStyleAll" TargetType="Button">
+    <Style x:Key="menuButtonStyle1" TargetType="Button">
         <Setter Property="BorderThickness" Value="0"/>
         <Setter Property="Foreground" Value="White"/>
         <Setter Property="FontSize" Value="16"/>
         <Setter Property="FontFamily" Value="Romul"/>
         <Setter Property="Cursor" Value="Hand"/>
-        <Setter Property="Background" Value="{StaticResource buttonFontColor3}"/>
+        <Setter Property="Background" Value="{StaticResource buttonFontColor16}"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
@@ -23,7 +23,32 @@
         </Setter>
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Background" Value="{StaticResource buttonFontColor4}"/>
+                <Setter Property="Background" Value="{StaticResource buttonFontColor17}"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style x:Key="menuButtonStyle2" TargetType="Button">
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="FontFamily" Value="Romul"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Background" Value="{StaticResource buttonFontColor17}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Width="185" Height="35"
+                              CornerRadius="6"
+                              Background="{TemplateBinding Background}">
+                        <ContentPresenter VerticalAlignment="Center"
+                                            HorizontalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{StaticResource buttonFontColor16}"/>
             </Trigger>
         </Style.Triggers>
     </Style>
