@@ -23,13 +23,14 @@
         </Setter>
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Background" Value="{StaticResource buttonFontColor17}"/>
+                <Setter Property="Background" Value="{StaticResource buttonFontColor3}"/>
             </Trigger>
         </Style.Triggers>
     </Style>
+    
     <Style x:Key="menuButtonStyle2" TargetType="Button">
         <Setter Property="BorderThickness" Value="0"/>
-        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="Foreground" Value="Black"/>
         <Setter Property="FontSize" Value="16"/>
         <Setter Property="FontFamily" Value="Romul"/>
         <Setter Property="Cursor" Value="Hand"/>
@@ -37,7 +38,7 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
-                    <Border Width="185" Height="35"
+                    <Border Width="145" Height="35"
                               CornerRadius="6"
                               Background="{TemplateBinding Background}">
                         <ContentPresenter VerticalAlignment="Center"
@@ -48,8 +49,89 @@
         </Setter>
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Background" Value="{StaticResource buttonFontColor16}"/>
+                <Setter Property="Background" Value="{StaticResource buttonFontColor2}"/>
             </Trigger>
         </Style.Triggers>
     </Style>
+
+    <Style x:Key="dataGridStyle3" TargetType="DataGrid">
+        <Setter Property="AutoGenerateColumns" Value="False" />
+        <Setter Property="Margin" Value="1,0,1,0" />
+        <Setter Property="HorizontalGridLinesBrush" Value="{StaticResource buttonFontColor3}" />
+        <Setter Property="Background" Value="White" />
+        <Setter Property="RowBackground" Value="{StaticResource buttonFontColor2}" />
+        <Setter Property="AlternatingRowBackground" Value="White" />
+        <Setter Property="IsReadOnly" Value="False" />
+        <Setter Property="RowHeight" Value="35"/>
+        <Setter Property="HorizontalScrollBarVisibility" Value="Visible"/>
+    </Style>
+
+    <Style x:Key="dataGridCentAl2" TargetType="DataGridColumnHeader">
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="FontFamily" Value="Bonche Light"/>
+        <Setter Property="FontSize" Value="12"/>
+    </Style>
+
+    <Style x:Key="DataGridContentCellCentering2" TargetType="DataGridCell">
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="FontFamily" Value="Unbounded Light"/>
+        <Setter Property="TextBlock.TextAlignment" Value="Center" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type DataGridCell}">
+                    <Grid Background="{TemplateBinding Background}">
+                        <ContentPresenter VerticalAlignment="Center" />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsSelected" Value="True">
+                <Setter Property="Background" Value="{StaticResource buttonFontColor3}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="messageTextBlockStyle3" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="FontWeight" Value="Medium"/>
+        <Setter Property="FontFamily" Value="Romul"/>
+        <Setter Property="TextWrapping" Value="Wrap"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+    </Style>
+
+    <Style x:Key="messageTextBlockStyle2" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="FontWeight" Value="Medium"/>
+        <Setter Property="FontFamily" Value="Romul"/>
+        <Setter Property="TextWrapping" Value="Wrap"/>
+    </Style>
+
+    <Style x:Key="TextBoxStyle1" TargetType="TextBox">
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="FontFamily" Value="Unbounded Light"/>
+        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="CaretBrush" Value="{StaticResource titleFontColor2}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource titleFontColor3}"/>
+        <Setter Property="BorderThickness" Value="0,0,0,4"/>
+        <Setter Property="TextAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Margin" Value="0,0,20,0"/>
+        <Setter Property="Padding" Value="0,8,0,0"/>
+    </Style>
+
+    <Style x:Key="ComboBoxStyle1" TargetType="ComboBox">
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="FontFamily" Value="Unbounded Light"/>
+        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="Margin" Value="0,-3,0,0"/>
+        <Setter Property="IsReadOnly" Value="True"/>
+        <Setter Property="IsEditable" Value="True"/>
+        <Setter Property="TextBlock.TextAlignment" Value="Center" />
+        <Setter Property="Padding" Value="0,6,0,0"/>
+        <Setter Property="SelectedIndex" Value="0"/>
+    </Style>
+
 </ResourceDictionary>
