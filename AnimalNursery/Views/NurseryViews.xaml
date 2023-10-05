@@ -12,12 +12,82 @@
         WindowStartupLocation="CenterScreen"
         Background="Transparent">
     <Window.DataContext>
-        <viewModel:NurseryViewModels/>
+        <viewModel:NurseryViewModel/>
     </Window.DataContext>
     <Border>
         <Border.Background>
             <ImageBrush ImageSource="/Images/bac.png"
                         Stretch="Fill"/>
         </Border.Background>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <Button x:Name="btnAddAnimal"
+                        Command="{Binding AddAnimal}"
+                        Content="▶︎ Добавить"
+                        Margin="0,80,0,0"
+                        VerticalAlignment="Top"
+                        Style="{StaticResource menuButtonStyle2}">
+                </Button>
+                <Button x:Name="btnUpdateAnimal"
+                        Command="{Binding UpdateAnimal}"
+                        Content="▶︎ Обновить"
+                        Margin="0,130,0,0"
+                        VerticalAlignment="Top"
+                        Style="{StaticResource menuButtonStyle2}">
+                </Button>
+                <Button x:Name="btnChangeAnimal"
+                        Command="{Binding ChangeAnimal}"
+                        Content="▶︎ Изменить"
+                        Margin="0,180,0,0"
+                        VerticalAlignment="Top"
+                        Style="{StaticResource menuButtonStyle2}" Cursor="Hand">
+                </Button>
+                <Button x:Name="btnDeleteAnimal"
+                        Command="{Binding DeleteAnimal}"
+                        Content="▶︎ Удалить"
+                        Margin="0,230,0,0"
+                        VerticalAlignment="Top"
+                        Style="{StaticResource menuButtonStyle2}">
+                </Button>
+            </Grid>
+            <Grid Grid.Column="1">
+                <DataGrid x:Name="dataGrid1"
+                          Style="{StaticResource dataGridStyle3}"
+                          ColumnHeaderStyle="{StaticResource dataGridCentAl2}"
+                          ItemsSource="{Binding NurseryCollection}"
+                          SelectedIndex="{Binding SelectedIndexAnimalDataGrid}"
+                          SelectedItem="{Binding SelectedAnimal}"
+                          CellStyle="{StaticResource DataGridContentCellCentering2}">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="id" 
+                            Binding="{Binding Id}" 
+                            Width="50" Visibility="Collapsed">
+                        </DataGridTextColumn>
+                        <DataGridTextColumn Header="Имя" 
+                            Binding="{Binding Name}"
+                            Width="*" />
+                        <DataGridTextColumn Header="Возраст" 
+                            Binding="{Binding Age}" 
+                            Width="*"/>
+                        <DataGridTextColumn Header="Высота" 
+                            Binding="{Binding Height}" 
+                            Width="*"/>
+                        <DataGridTextColumn Header="Вес" 
+                            Binding="{Binding Weight}" 
+                            Width="*"/>
+                        <DataGridTextColumn Header="Класс" 
+                            Binding="{Binding ClassAnimal}" 
+                            Width="*"/>
+                        <DataGridTextColumn Header="Команды" 
+                            Binding="{Binding Command}" 
+                            Width="*"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+        </Grid>
     </Border>
 </Window>
