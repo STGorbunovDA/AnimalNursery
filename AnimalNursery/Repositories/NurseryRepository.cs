@@ -17,7 +17,8 @@ namespace AnimalNursery.Repositories
 			{
                 if (!InternetCheck.CheckSkyNET())
                     return NurseryCollection;
-                using (MySqlCommand cmd = new MySqlCommand("GetAll", ConnectionDB.GetInstance.GetConnection()))
+                using (MySqlCommand cmd = new MySqlCommand("GetAll", 
+                    ConnectionDB.GetInstance.GetConnection()))
                 {
                     ConnectionDB.GetInstance.OpenConnection();
                     cmd.CommandType = CommandType.StoredProcedure;
@@ -30,7 +31,7 @@ namespace AnimalNursery.Repositories
                                 var animal = new Animal(
                                     reader.GetInt32(0),
                                     reader.GetString(1),
-                                    reader.GetInt32(2),
+                                    reader.GetDouble(2),
                                     reader.GetDouble(3),
                                     reader.GetDouble(4),
                                     reader.GetString(5),
@@ -52,7 +53,7 @@ namespace AnimalNursery.Repositories
             {
                 if (!InternetCheck.CheckSkyNET())
                     return false;
-                using (MySqlCommand cmd = new MySqlCommand("Add", 
+                using (MySqlCommand cmd = new MySqlCommand("AddAnimal", 
                     ConnectionDB.GetInstance.GetConnection()))
                 {
                     ConnectionDB.GetInstance.OpenConnection();
@@ -76,18 +77,18 @@ namespace AnimalNursery.Repositories
             {
                 if (!InternetCheck.CheckSkyNET())
                     return false;
-                using (MySqlCommand cmd = new MySqlCommand("Update",
+                using (MySqlCommand cmd = new MySqlCommand("UpdateAnimal",
                     ConnectionDB.GetInstance.GetConnection()))
                 {
                     ConnectionDB.GetInstance.OpenConnection();
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue($"nameUser", animal.Name);
-                    cmd.Parameters.AddWithValue($"ageUser", animal.Age);
-                    cmd.Parameters.AddWithValue($"heightUser", animal.Height);
-                    cmd.Parameters.AddWithValue($"weightUser", animal.Weight);
-                    cmd.Parameters.AddWithValue($"classAnimalUser", animal.ClassAnimal);
-                    cmd.Parameters.AddWithValue($"commandUser", animal.Command);
-                    cmd.Parameters.AddWithValue($"IdUser", animal.Id);
+                    cmd.Parameters.AddWithValue("@nameUser", animal.Name);
+                    cmd.Parameters.AddWithValue("@ageUser", animal.Age);
+                    cmd.Parameters.AddWithValue("@heightUser", animal.Height);
+                    cmd.Parameters.AddWithValue("@weightUser", animal.Weight);
+                    cmd.Parameters.AddWithValue("@classAnimalUser", animal.ClassAnimal);
+                    cmd.Parameters.AddWithValue("@commandUser", animal.Command);
+                    cmd.Parameters.AddWithValue("@IdUser", animal.Id);
 
                     if (cmd.ExecuteNonQuery() == 1) return true;
                     else return false;
@@ -102,7 +103,7 @@ namespace AnimalNursery.Repositories
             {
                 if (!InternetCheck.CheckSkyNET())
                     return false;
-                using (MySqlCommand cmd = new MySqlCommand("Delete",
+                using (MySqlCommand cmd = new MySqlCommand("DeleteAnimal",
                     ConnectionDB.GetInstance.GetConnection()))
                 {
                     ConnectionDB.GetInstance.OpenConnection();
