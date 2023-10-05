@@ -8,7 +8,7 @@ Cписок задач:
 
 **Выполнение**
 
-Для реализации проекта выранна многослойная архитектура включающая в себя
+Для реализации проекта выранна многослойная архитектура включающая в себя: 
 
 
    - Infrastructure/Base [InstanceChecker, InternetCheck](https://github.com/STGorbunovDA/AnimalNursery/tree/dev/AnimalNursery/Infrastructure/Base) 
