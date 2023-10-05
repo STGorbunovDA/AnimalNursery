@@ -8,20 +8,20 @@ Cписок задач:
 
 **Выполнение**
 
-Для реализации проекта выранна многослойная архитектура включающая в себя:
+Для реализации проекта выранна многослойная архитектура включающая в себя
 
 
-    Infrastructure/Base [InstanceChecker, InternetCheck](https://github.com/STGorbunovDA/AnimalNursery/tree/dev/AnimalNursery/Infrastructure/Base) 
+   - Infrastructure/Base [InstanceChecker, InternetCheck](https://github.com/STGorbunovDA/AnimalNursery/tree/dev/AnimalNursery/Infrastructure/Base) 
 
-    Models/Base [Animal](https://github.com/STGorbunovDA/AnimalNursery/blob/dev/AnimalNursery/Models/Base/Animal.cs) имплементируя [IExecuteCommand](https://github.com/STGorbunovDA/AnimalNursery/blob/dev/AnimalNursery/Models/Base/Interfaces/IExecuteCommand.cs)
+   - Models/Base [Animal](https://github.com/STGorbunovDA/AnimalNursery/blob/dev/AnimalNursery/Models/Base/Animal.cs) имплементируя [IExecuteCommand](https://github.com/STGorbunovDA/AnimalNursery/blob/dev/AnimalNursery/Models/Base/Interfaces/IExecuteCommand.cs)
 
-    Repositories [ConnectionDB, INurseryRepository, NurseryRepository](https://github.com/STGorbunovDA/AnimalNursery/tree/dev/AnimalNursery/Repositories).
+   - Repositories [ConnectionDB, INurseryRepository, NurseryRepository](https://github.com/STGorbunovDA/AnimalNursery/tree/dev/AnimalNursery/Repositories).
 
-    Styles [RegionStyles, UIColors](https://github.com/STGorbunovDA/AnimalNursery/tree/dev/AnimalNursery/Styles)
+   - Styles [RegionStyles, UIColors](https://github.com/STGorbunovDA/AnimalNursery/tree/dev/AnimalNursery/Styles)
 
-    ViewModels [ViewModelBase, ViewModelCommand, AddAnimalViewModel, NurseryViewModel](https://github.com/STGorbunovDA/AnimalNursery/tree/dev/AnimalNursery/ViewModels)
+   - ViewModels [ViewModelBase, ViewModelCommand, AddAnimalViewModel, NurseryViewModel](https://github.com/STGorbunovDA/AnimalNursery/tree/dev/AnimalNursery/ViewModels)
 
-    Views [AddAnimalView, NurseryViews](https://github.com/STGorbunovDA/AnimalNursery/tree/dev/AnimalNursery/Views)
+   - Views [AddAnimalView, NurseryViews](https://github.com/STGorbunovDA/AnimalNursery/tree/dev/AnimalNursery/Views)
 
     Интерфейс приложения:
 
